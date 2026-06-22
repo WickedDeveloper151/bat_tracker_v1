@@ -1,4 +1,4 @@
-Automated Bat Tracking & Sorting Pipeline
+# Automated Bat Tracking & Sorting Pipeline
 
 This tool uses an artificial intelligence (AI) model to automatically watch hours of infrared cave footage or scan hundreds of trail-camera photos. 
 It finds the bats, draws tracking boxes around them, and sorts your files into clean, organized folders so you don't have to watch empty footage.
@@ -10,7 +10,7 @@ What is actually inside this folder?
 - annotate_and_sort.py: This is the actual engine. It's the script that wakes the AI up and tells it to look at your videos.
 - requirements.txt: A simple text list of the background software the AI needs to run (like the code that understands video files).
 
-Step 1: First-Time Setup (You only do this once!)
+# Step 1: First-Time Setup (You only do this once!)
 To run this tool, your computer needs to have Python installed. Python is just the language the tool is written in.
 
 A. Check for Python
@@ -51,7 +51,7 @@ Important Note for the Future: Every time you close the command prompt and come 
 
 
 
-Step 2: Running the Tool
+# Step 2: Running the Tool
 Whenever you have new data from the field, follow these three simple steps:
 
 1. Load Your Data
@@ -75,7 +75,7 @@ The screen will start printing out text, letting you know exactly what it is doi
 
 
 
-Step 3: Checking Your Results
+# Step 3: Checking Your Results
 When the text on the screen says "All files processed, annotated, and sorted successfully!", the tool is done.
 
 If you look inside your main folder, you will notice the tool automatically created two brand new folders for you:
@@ -93,7 +93,7 @@ If you are running this on a research cluster rather than a personal laptop, ski
 #SBATCH --account=YOUR_UC_PROJECT_ID   # Replace with UC billing account
 #SBATCH --partition=gpu                # Replace with the exact UC GPU partition name
 
-# Load the exact CUDA module name UC uses (Run 'module avail cuda' to find it)
+#Load the exact CUDA module name UC uses (Run 'module avail cuda' to find it)
 module load cuda/xx.x.x  
 
 3. Open your cluster terminal and type sbatch run_master_pipeline.sh.
