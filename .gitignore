@@ -1,0 +1,4 @@
+raw_videos_folder/*
+!raw_videos_folder/.gitkeep
+sorted_has_bats/
+sorted_no_bats/
