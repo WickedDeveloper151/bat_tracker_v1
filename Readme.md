@@ -100,6 +100,16 @@ module load cuda/xx.x.x
 
 4. The cluster will handle the rest! You can check the .log files that appear to see its progress.
 
+# Troubleshooting / FAQ
+Q: The script immediately crashes and says "FileNotFoundError"!
+A: You might have accidentally deleted the raw_videos_folder or the weights folder. Make sure they exist and are spelled exactly right.
+
+Q: It's flagging bats that are not there!
+A: The AI is tuned to a very specific infrared temperature range. If the cave environment has drastically changed (like sunlight hitting the rocks and making them glow warmly), the AI might get confused. 
+Go into annotate_and_sort.py and increase CONF_THRESHOLD by few points
+
+Q: I have a massive .zip file with folders inside of folders inside of folders. Will it work?
+A: Yes! The tool is designed to dig through as many messy sub-folders as necessary to find the hidden video and image files.
 
 
 
