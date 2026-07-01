@@ -9,7 +9,7 @@ from ultralytics import YOLO
 # ==========================================
 # 1. CONFIGURATION
 # ==========================================
-INPUT_SOURCE = "/raw_videos_folder"      
+INPUT_SOURCE = "raw_videos_folder"      
 OUTPUT_DIR = "sorted_media_files"
 MODEL_PATH = "weights/best.pt"
 CONF_THRESHOLD = 0.60
