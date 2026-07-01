@@ -9,6 +9,7 @@ What is actually inside this folder?
 - weights/: This contains a file called best.pt. Think of this as the "AI's Brain." It is the file that actually knows what a bat looks like.
 - annotate_and_sort.py: This is the actual engine. It's the script that wakes the AI up and tells it to look at your videos.
 - requirements.txt: A simple text list of the background software the AI needs to run (like the code that understands video files).
+- count_unique_bats.py: The Engine that counts and sorts the bats.
 
 Step 1: First-Time Setup (You only do this once!)
 To run this tool, your computer needs to have Python installed. Python is just the language the tool is written in.
@@ -60,6 +61,10 @@ Drag and drop your raw videos (.mp4, .avi), your photos (.jpg, .png), or even yo
 2. Start the Engine
 Open your Terminal or Command Prompt, make sure your (bat_env) environment is active, and type:
 python 	annotate_and_sort.py
+
+or 
+
+python count_unique_bats.py
 
 Press Enter.
 
