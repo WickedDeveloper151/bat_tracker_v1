@@ -1,4 +1,4 @@
-Automated Bat Tracking & Sorting Pipeline
+# Automated Bat Tracking & Sorting Pipeline
 
 This tool uses an artificial intelligence (AI) model to automatically watch hours of infrared cave footage or scan hundreds of trail-camera photos. 
 It finds the bats, draws tracking boxes around them, and sorts your files into clean, organized folders so you don't have to watch empty footage.
@@ -11,7 +11,7 @@ What is actually inside this folder?
 - requirements.txt: A simple text list of the background software the AI needs to run (like the code that understands video files).
 - count_unique_bats.py: The Engine that counts and sorts the bats.
 
-Step 1: First-Time Setup (You only do this once!)
+# Step 1: First-Time Setup (You only do this once!)
 To run this tool, your computer needs to have Python installed. Python is just the language the tool is written in.
 
 A. Check for Python
@@ -52,7 +52,7 @@ Important Note for the Future: Every time you close the command prompt and come 
 
 
 
-Step 2: Running the Tool
+# Step 2: Running the Tool
 Whenever you have new data from the field, follow these three simple steps:
 
 1. Load Your Data
@@ -80,7 +80,7 @@ The screen will start printing out text, letting you know exactly what it is doi
 
 
 
-Step 3: Checking Your Results
+# Step 3: Checking Your Results
 When the text on the screen says "All files processed, annotated, and sorted successfully!", the tool is done.
 
 If you look inside your main folder, you will notice the tool automatically created two brand new folders for you:
@@ -98,13 +98,23 @@ If you are running this on a research cluster rather than a personal laptop, ski
 #SBATCH --account=YOUR_UC_PROJECT_ID   # Replace with UC billing account
 #SBATCH --partition=gpu                # Replace with the exact UC GPU partition name
 
-# Load the exact CUDA module name UC uses (Run 'module avail cuda' to find it)
+#Load the exact CUDA module name UC uses (Run 'module avail cuda' to find it)
 module load cuda/xx.x.x  
 
 3. Open your cluster terminal and type sbatch run_master_pipeline.sh.
 
 4. The cluster will handle the rest! You can check the .log files that appear to see its progress.
 
+# Troubleshooting / FAQ
+Q: The script immediately crashes and says "FileNotFoundError"!
+A: You might have accidentally deleted the raw_videos_folder or the weights folder. Make sure they exist and are spelled exactly right.
+
+Q: It's flagging bats that are not there!
+A: The AI is tuned to a very specific infrared temperature range. If the cave environment has drastically changed (like sunlight hitting the rocks and making them glow warmly), the AI might get confused. 
+Go into annotate_and_sort.py and increase CONF_THRESHOLD by few points
+
+Q: I have a massive .zip file with folders inside of folders inside of folders. Will it work?
+A: Yes! The tool is designed to dig through as many messy sub-folders as necessary to find the hidden video and image files.
 
 
 
