@@ -13,8 +13,8 @@ NO_BATS_DIR = "sorted_no_bats"
 TEMP_UNZIP_DIR = "temp_unpacked_data" # Temporary holding zone for zip contents
 
 # Hardened Detection Guardrails
-CONF_THRESHOLD = 0.63
-MIN_BOX_SIZE = 10
+CONF_THRESHOLD = 0.38
+MIN_BOX_SIZE = 8
 
 # Create all necessary directories
 for d in [HAS_BATS_DIR, NO_BATS_DIR, TEMP_UNZIP_DIR]:
