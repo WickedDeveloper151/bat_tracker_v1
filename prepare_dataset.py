@@ -7,8 +7,8 @@ import random
 # ==========================================
 # 1. CONFIGURATION
 # ==========================================
-NEW_DATA_TAR = "/fs/ess/PZS1151/dwing_data/bat_broke_batch.tar"       # CVAT export
-OLD_DATA_TAR = "/fs/ess/PZS1151/dwing_data/old_data.tar"       # Previous training data
+NEW_DATA_TAR = "new_data.tar"       # CVAT export
+OLD_DATA_TAR = "old_data.tar"       # Previous training data
 OUTPUT_TAR = "ready_for_training.tar"
 
 WORKSPACE = "temp_data_prep"

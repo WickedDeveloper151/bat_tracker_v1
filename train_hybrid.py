@@ -31,7 +31,7 @@ except Exception as e:
 # 1. LOAD THE MODEL
 # ==========================================
 # Load your existing hardened brain
-model = YOLO("/fs/ess/PZS1151/dwing_data/training_script/runs/detect/bat_tracking_project/hybrid_model_6th/weights/best.pt") 
+model = YOLO("weights/best.pt") 
 
 print("\nSuccessfully loaded existing weights. Beginning fine-tuning on OSC...")
 
@@ -41,8 +41,8 @@ print("\nSuccessfully loaded existing weights. Beginning fine-tuning on OSC...")
 # Train on the merged and balanced dataset
 results = model.train(
     # CRITICAL FIX: Point directly to the yaml inside the yolo_dataset folder
-    data="/fs/ess/PZS1151/dwing_data/yolo_dataset/data.yaml",
-    epochs=300,           
+    data="yolo_dataset/data.yaml",
+    epochs=3,           
     imgsz=640,
     patience=50,
     
@@ -63,6 +63,6 @@ results = model.train(
     erasing=0.2,          # Forces AI to learn partially hidden bats
     
     project="bat_tracking_project",
-    name="hybrid_model_8th")
+    name="hybrid_model")
 
 print("\nFine-tuning complete! Your upgraded model is in 'bat_tracking_project/hybrid_model_v1/weights/'.")
