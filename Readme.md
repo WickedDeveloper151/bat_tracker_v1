@@ -4,12 +4,17 @@ This tool uses an artificial intelligence (AI) model to automatically watch hour
 It finds the bats, draws tracking boxes around them, and sorts your files into clean, organized folders so you don't have to watch empty footage.
 This guide will walk you through exactly how to use it.
 
+If you want an overview of how to use the pipeline as a whole, watch this youtube video: https://youtu.be/F0XCzlGdnRM
+
 What is actually inside this folder?
 - raw_videos_folder/: This is your drop-zone. You will put all your un-watched videos, photos, or .zip files in here.
 - weights/: This contains a file called best.pt. Think of this as the "AI's Brain." It is the file that actually knows what a bat looks like.
 - annotate_and_sort.py: This is the actual engine. It's the script that wakes the AI up and tells it to look at your videos.
 - requirements.txt: A simple text list of the background software the AI needs to run (like the code that understands video files).
 - count_unique_bats.py: The Engine that counts and sorts the bats.
+- old_data.tar: A sample set of data
+- prepare_dataset.py: A program that takes the old and new data, removes excess background, combines them, and allocates some to validation
+- train_hybrid.py: Trains the previous best with the newly formated data.
 
 # Step 1: First-Time Setup (You only do this once!)
 To run this tool, your computer needs to have Python installed. Python is just the language the tool is written in.
