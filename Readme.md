@@ -119,4 +119,32 @@ A: Yes! The tool is designed to dig through as many messy sub-folders as necessa
 
 
 
+CVAT structure:
+[
+  {
+    "name": "bat",
+    "id": 14,
+    "color": "#800040",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "bat_part",
+    "id": 15,
+    "color": "#c2c521",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "group_of_bats",
+    "id": 16,
+    "color": "#519506",
+    "type": "any",
+    "attributes": []
+  }
+]
+
+
+
+
 
