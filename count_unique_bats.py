@@ -140,7 +140,7 @@ for idx, file_path in enumerate(media_files):
         temp_vid_path = os.path.join(TEMP_WORKSPACE, f"temp_{filename}")
         
         # 2. THIS WAS THE MISSING LINE: Start the YOLO tracker
-        results_generator = model.track(source=file_path, conf=CONF_THRESHOLD, persist=True, stream=True, verbose=False, tracker="bytetrack.yaml")
+        results_generator = model.track(source=file_path, conf=CONF_THRESHOLD, persist=False, stream=True, verbose=False, tracker="bytetrack.yaml")
         
         video_writer = None
 
