@@ -5,6 +5,7 @@ It finds the bats, draws tracking boxes around them, and sorts your files into c
 This guide will walk you through exactly how to use it.
 
 If you want an overview of how to use the pipeline as a whole, watch this youtube video: https://youtu.be/F0XCzlGdnRM
+Guide on how I annotated the data in CVAT: https://youtu.be/eQYhe3auw7E
 
 What is actually inside this folder?
 - raw_videos_folder/: This is your drop-zone. You will put all your un-watched videos, photos, or .zip files in here.
