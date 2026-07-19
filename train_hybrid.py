@@ -33,7 +33,7 @@ except Exception as e:
 # Load your existing hardened brain
 model = YOLO("weights/best.pt") 
 
-print("\nSuccessfully loaded existing weights. Beginning fine-tuning on OSC...")
+print("\nSuccessfully loaded existing weights. Beginning fine-tuning...")
 
 # ==========================================
 # 2. TRAIN THE MODEL
@@ -42,12 +42,13 @@ print("\nSuccessfully loaded existing weights. Beginning fine-tuning on OSC...")
 results = model.train(
     # CRITICAL FIX: Point directly to the yaml inside the yolo_dataset folder
     data="yolo_dataset/data.yaml",
-    epochs=3,           
+    epochs=300,           
     imgsz=640,
     patience=50,
     
     # --- KNOWLEDGE PRESERVATION ---
-    lr0=0.001,            # Low learning rate to protect old single-bat memory
+    lr0=0.001,            # Low learning rate 
+    optimizer='SGD',
     freeze=10, # Lock the foundational vision layers
     
     # --- CAVE-SPECIFIC AUGMENTATION ---
@@ -63,6 +64,6 @@ results = model.train(
     erasing=0.2,          # Forces AI to learn partially hidden bats
     
     project="bat_tracking_project",
-    name="hybrid_model")
+    name="Newest_model")
 
-print("\nFine-tuning complete! Your upgraded model is in 'bat_tracking_project/hybrid_model_v1/weights/'.")
+print("\nFine-tuning complete! Your upgraded model is in 'runs/detect/bat_tracking_project'.")
