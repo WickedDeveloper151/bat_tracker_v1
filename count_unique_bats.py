@@ -67,7 +67,7 @@ for root, _, files in os.walk(INPUT_DIR):
         if file_ext in image_exts or file_ext in video_exts:
             media_files.append(file_path)
             
-        # If it's a zip file, crack it open
+        # If it's a zip file, open it
         elif file_ext == '.zip':
             print(f"  -> Extracting '{file}'...")
             zip_name = os.path.splitext(file)[0]
@@ -139,7 +139,6 @@ for idx, file_path in enumerate(media_files):
         # 1. Setup temporary holding path for the video
         temp_vid_path = os.path.join(TEMP_WORKSPACE, f"temp_{filename}")
         
-        # 2. THIS WAS THE MISSING LINE: Start the YOLO tracker
         results_generator = model.track(source=file_path, conf=CONF_THRESHOLD, persist=False, stream=True, verbose=False, tracker="bytetrack.yaml")
         
         video_writer = None
@@ -179,8 +178,6 @@ for idx, file_path in enumerate(media_files):
             annotated_frame = result.plot()
             video_writer.write(annotated_frame)
             
-            # NOTE: We removed the 'break' optimization here. 
-            # If we break early, your annotated video will be cut short!
 
         # 6. Close the video file
         if video_writer:
