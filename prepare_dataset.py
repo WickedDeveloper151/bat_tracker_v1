@@ -19,7 +19,7 @@ EMPTY_FRAME_RATIO = 0.04        # 4% of total new frames
 OLD_DATA_RATIO = 1.0            # Old data = 100% of new data
 VAL_SPLIT_RATIO = 0.10          # Val split = 10% of total data
 
-# Set a random seed for reproducibility (optional)
+# Set a random seed for reproducibility 
 random.seed(59)
 
 
@@ -102,9 +102,9 @@ print(f"  -> Found {len(new_pairs)} total new frames.")
 print(f"  -> Found {len(new_filled)} frames with bats.")
 print(f"  -> Found {len(new_empty)} empty background frames.")
 
-# Calculate exactly 4% of the TOTAL new frames
+# Calculate exactly EMPTY_FRAME_RATIO% of the TOTAL new frames
 target_empty_frames = int(len(new_pairs) * EMPTY_FRAME_RATIO)
-print(f"  -> Calculated target empty frames (4%): {target_empty_frames}")
+print(f"  -> Calculated target empty frames: {target_empty_frames}")
 
 # Shuffle and slice the empty frames
 random.shuffle(new_empty)
@@ -180,7 +180,7 @@ copy_to_structure(val_set, "val")
 # ==========================================
 # 7. MIGRATE & REWRITE DATA.YAML
 # ==========================================
-print("Generating bulletproof data.yaml...")
+print("Generating data.yaml...")
 dest_yaml = os.path.join(COMBINED_DIR, "data.yaml")
 
 # Hardcoding the exact class structure ensures YOLO never throws a NoneType error
