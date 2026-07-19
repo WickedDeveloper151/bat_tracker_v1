@@ -121,11 +121,10 @@ for file_path in media_files:
         out.release()
         
         # Temporal Filter: Needs >1 frame to prove it isn't a glitch
-        if frames_with_bats > 1:
-            shutil.move(temp_output_path, os.path.join(HAS_BATS_DIR, filename))
-            print(f"  -> VIDEO MATCH ({frames_with_bats} frames): Saved to {HAS_BATS_DIR}/")
-        else:
-            print(f"  -> NO MATCH: Saved to {NO_BATS_DIR}/")
+        
+        shutil.move(temp_output_path, os.path.join(HAS_BATS_DIR, filename))
+        print(f"  -> VIDEO MATCH ({frames_with_bats} frames): Saved to {HAS_BATS_DIR}/")
+        
 
 # --- PHASE 4: CLEANUP ---
 # Wipe the temporary unzipped data to save disk space
